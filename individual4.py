@@ -10,9 +10,10 @@ if __name__ == "__main__":
     result = 0.0
     terms = 50
 
+    a = 1 / math.factorial(n)
     for k in range(terms):
-        numerator = ((-(x ** 2) / 4) ** k) / (math.factorial(k) * math.factorial(k + n))
-        result += numerator
+        result += a
+        a = a * (-(x ** 2) / 4) / ((k + 1) * (k + n + 1))
 
     bessel_value = result * (x / 2) ** n
     print(bessel_value)
